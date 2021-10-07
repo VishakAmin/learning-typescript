@@ -38,3 +38,36 @@ function response(message) {
     console.log(message);
 }
 response("Hello");
+const user1 = {
+    id: 1,
+    name: "Vishak"
+};
+//Classes
+class Person {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+        console.log(id, name);
+    }
+    register() {
+        return `${this.name} is Logged In`;
+    }
+}
+const vishak = new Person(1, "Vishak Amin");
+console.log(vishak.register());
+//extends
+class Employee extends Person {
+    constructor(id, name, position) {
+        super(id, name);
+        this.position = position;
+    }
+}
+const emp = new Employee(3, "Barry", "HR");
+console.log(emp.register());
+//Generics
+function getArray(items) {
+    return new Array().concat(items);
+}
+let numArray = getArray([1, 2, 3, 4]);
+let strArray = getArray(["Vish", "Hello"]);
+strArray.push("dsds");
